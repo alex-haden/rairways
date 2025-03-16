@@ -291,7 +291,7 @@ function(res, flight_id, num_passengers, cabin_class = 'economy', is_new_custome
     }
     if (num_passengers_int < 1 || num_passengers_int > 10) {
       res$status <- 400
-      return("Paramter num_passengers must be between 1 and 10 inclusive")
+      return("Parameter num_passengers must be between 1 and 10 inclusive")
     }
     if (luggage_weight_int < 0 || luggage_weight_int > 40) {
       res$status <- 400
@@ -575,7 +575,7 @@ function(req, res, flight_id, email, details) {
   }
   if (num_passengers_int < 1 || num_passengers_int > 10) {
     res$status <- 400
-    return("Paramter num_passengers must be between 1 and 10 inclusive")
+    return("Parameter num_passengers must be between 1 and 10 inclusive")
   }
   if (luggage_weight_int < 0 || luggage_weight_int > 40) {
     res$status <- 400

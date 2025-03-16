@@ -15,13 +15,13 @@ flight_pricing <- function(flight_id, num_passengers_int, cabin_class, is_new_cu
   flight_index <- which(flights_joined$flight_id == flight_id)
   
   # Variables
-  cabin_class_multipler <- ifelse(cabin_class == 'first', 5, ifelse(cabin_class == 'business', 2.5, 1))
+  cabin_class_multiplier <- ifelse(cabin_class == 'first', 5, ifelse(cabin_class == 'business', 2.5, 1))
   demand_coefficient <- 0.5 + flights_joined$popularity[flight_index] / 10
   is_mon_or_fri <- ifelse(flights_joined$day[flight_index] %in% c("monday", "friday"), 25, 0)
   luggage_cost <- 1.5 * ceiling(luggage_weight_int / 10) * 10
   does_have_discount <- ifelse(is_new_customer_bool, 0.95, 1)
   
-  fare1_passenger <- (0.15 * flights_joined$distance_miles[flight_index] * cabin_class_multipler * demand_coefficient) +
+  fare1_passenger <- (0.15 * flights_joined$distance_miles[flight_index] * cabin_class_multiplier * demand_coefficient) +
     is_mon_or_fri + luggage_cost
   total_fare <- fare1_passenger * num_passengers_int * does_have_discount
   ceiling(total_fare)
