@@ -1,6 +1,6 @@
 library(plumber)
 
-suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(dplyr)) # Part of the tidyverse package
 library(grid)
 library(future)
 future::plan("multisession")
@@ -17,7 +17,7 @@ function(req, res) {
   
   res$setHeader("Access-Control-Allow-Origin", "18.175.223.13:8000") # exact domain
   res$setHeader("Access-Control-Allow-Methods", "GET, POST, PUT")
-  res$setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, API_KEY")
+  res$setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, API_KEY, API-KEY")
   
   # If the request is a preflight (OPTIONS), return a successful response
   if (req$REQUEST_METHOD == "OPTIONS") {

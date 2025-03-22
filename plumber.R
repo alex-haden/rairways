@@ -4,7 +4,7 @@ library(plumber)
 
 blocked_ips <- c("1.2.3.4", "2.3.4.5", "3.4.5.6", "4.5.6.7")
 
-#* @apiTitle Raiways API
+#* @apiTitle Rairways API
 #* @apiDescription This is the primary API for Rairways
 #* @apiContact list(name = "API Support", email = "contact@rplumberapi.com")
 #* @apiVersion 1.0.0
